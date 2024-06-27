@@ -1,3 +1,4 @@
+require('dotenv').config()
 var fs = require('fs');
 var express = require('express');
 var session = require('express-session');
@@ -9,7 +10,6 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
-require('dotenv').config()
 
 var env = process.env.NODE_ENV || 'default';
 var config = require('config');
@@ -68,7 +68,7 @@ app.use(passport.session());
 // app.use('/login', login);
 // app.use('/register', register);
 // app.use('/account', account);
-// app.use('/play', play);
+app.use('/play', play);
 // app.use('/api', api);
 app.use('/api', api);
 
